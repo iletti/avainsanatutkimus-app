@@ -158,6 +158,7 @@ export default function Page() {
       {showResults && (
         <div className={`results-container mt-6 p-4 bg-gray-100 dark:bg-gray-800 rounded-md transition-all duration-500 ease-out ${showResults ? 'show' : 'hide'}`}>
           <h3 className="text-lg font-bold mb-2 dark:text-white">Avainsanatutkimuksen tulokset</h3>
+          <p className='dark:text-white'>Tarvitsetko jeesiä hakukoneoptimoinnissa? Ota yhteyttä ilari@ilarischmidt.com</p>
           <p className='dark:text-white'>Tässä on tekoälyn luoma avainsanatutkimus, joka on laadittu täyttämäsi tietojen perusteella:</p>
           <div className="results-content mt-4 prose dark:prose-invert">
             {messages.filter(m => m.role !== 'user').map((m: { id: string; content: string }) => (
