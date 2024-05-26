@@ -47,7 +47,7 @@ export default function Page() {
   }, [isSubmitted, handleSubmit]);
 
   return (
-    <div className="max-w-xl mx-auto p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-md dark:border-gray-800">
+    <div className="max-w-xl mx-auto p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-transparent dark:bg-gray-900 shadow-md dark:border-gray-800">
       <h2 className="text-2xl font-bold mb-4 dark:text-white">Tee ilmainen avainsanatutkimus</h2>
       {!isSubmitted ? (
         <form className="space-y-4" onSubmit={handleCustomSubmit}>
@@ -135,7 +135,7 @@ export default function Page() {
               className="mr-2"
               required
             />
-            <label htmlFor="cookie-consent dark:text-white" className="text-sm">
+            <label htmlFor="cookie-consent" className="text-sm dark:text-white">
               Hyväksyn, että saan avainsanatutkimuksen tulokset sähköpostiini.
             </label>
             <ValidationError 
