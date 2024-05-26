@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.results-container {
+  max-height: 0; /* Hide by default */
+  opacity: 0; /* Hide by default */
+  overflow: hidden;
+}
+
+.results-container.show {
+  max-height: 75vh; /* Adjust this value as needed */
+  opacity: 1;
+  padding-top: 15px;
+}
+
+.results-content {
+  max-height: 450px; /* Adjust this value as needed */
+  overflow-y: auto;
+  position: relative;
+  padding-right: 10px; /* Add some padding for better scroll visibility */
+}
+
+.scroll-arrow {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+  display: none; /* Initially hidden */
+  position: relative;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.results-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.results-content::-webkit-scrollbar-thumb {
+  background-color: rgba(3, 86, 155, 0.6);
+  border-radius: 4px;
+}
+
+.results-container.show .scroll-arrow {
+  display: block;
+}
+
+.results-content:scroll {
+  scroll-behavior: smooth;
+}
