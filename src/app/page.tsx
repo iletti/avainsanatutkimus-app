@@ -25,7 +25,7 @@ export default function Page() {
       return;
     }
 
-    const prompt = `Your job is to generate a keyword list based on the company's services or products. Create a professional-looking keyword research report based on the message the user submits. Focus on keywords and at the end give 5 content tips. Keep any other text minimal. Keep the text style passive and professional. Default language: Finnish.
+    const prompt = `Your job is to generate a keyword list based on the company's services or products. Create a professional-looking keyword research report based on the message the user submits. Focus on keywords and at the end give 3 tips how to use keywords. Keep any other text minimal. Keep the text style passive and professional. Default language: Finnish.
     
     My company: ${companyName}
     Services or products for keyword research:
@@ -58,7 +58,7 @@ export default function Page() {
             <input
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white"
               id="company-name"
-              placeholder="Enter your company name"
+              placeholder="Yrityksen nimi"
               type="text"
               name="companyName"
               value={companyName}
@@ -73,7 +73,7 @@ export default function Page() {
             <input
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white"
               id="email"
-              placeholder="Enter your email"
+              placeholder="Sähköposti"
               type="email"
               name="email"
               value={email}
