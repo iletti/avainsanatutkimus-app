@@ -48,11 +48,11 @@ export default function Page() {
 
   return (
     <div className="max-w-xl mx-auto p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-md dark:border-gray-800">
-      <h2 className="text-2xl font-bold mb-4">Tee ilmainen avainsanatutkimus</h2>
+      <h2 className="text-2xl font-bold mb-4 dark:text-white">Tee ilmainen avainsanatutkimus</h2>
       {!isSubmitted ? (
         <form className="space-y-4" onSubmit={handleCustomSubmit}>
           <div>
-            <label className="block font-medium mb-1" htmlFor="company-name">
+            <label className="block font-medium mb-1 dark:text-white" htmlFor="company-name">
               Yrityksen nimi
             </label>
             <input
@@ -67,7 +67,7 @@ export default function Page() {
             />
           </div>
           <div>
-            <label className="block font-medium mb-1" htmlFor="email">
+            <label className="block font-medium mb-1 dark:text-white" htmlFor="email">
               Sähköposti
             </label>
             <input
@@ -87,7 +87,7 @@ export default function Page() {
             />
           </div>
           <div>
-            <label className="block font-medium mb-1" htmlFor="services">
+            <label className="block font-medium mb-1 dark:text-white" htmlFor="services">
               Lista tuotteista tai palveluistasi
             </label>
             <textarea
@@ -107,7 +107,7 @@ export default function Page() {
             />
           </div>
           <div>
-            <label className="block font-medium mb-1" htmlFor="guidelines">
+            <label className="block font-medium mb-1 dark:text-white" htmlFor="guidelines">
               Tarkennukset
             </label>
             <textarea
@@ -135,7 +135,7 @@ export default function Page() {
               className="mr-2"
               required
             />
-            <label htmlFor="cookie-consent" className="text-sm">
+            <label htmlFor="cookie-consent dark:text-white" className="text-sm">
               Hyväksyn, että saan avainsanatutkimuksen tulokset sähköpostiini.
             </label>
             <ValidationError 
@@ -153,15 +153,15 @@ export default function Page() {
           </button>
         </form>
       ) : (
-        <div className="text-center text-xl font-semibold mt-4">Tässä avainsanatutkimus ole hyvä!</div>
+        <div className="text-center text-xl font-semibold mt-4 dark:text-white">Tässä avainsanatutkimus ole hyvä!</div>
       )}
       {showResults && (
         <div className={`results-container mt-6 p-4 bg-gray-100 dark:bg-gray-800 rounded-md transition-all duration-500 ease-out ${showResults ? 'show' : 'hide'}`}>
-          <h3 className="text-lg font-bold mb-2">Avainsanatutkimuksen tulokset</h3>
-          <p>Tässä on tekoälyn luoma avainsanatutkimus, joka on laadittu täyttämäsi tietojen perusteella:</p>
+          <h3 className="text-lg font-bold mb-2 dark:text-white">Avainsanatutkimuksen tulokset</h3>
+          <p className='dark:text-white'>Tässä on tekoälyn luoma avainsanatutkimus, joka on laadittu täyttämäsi tietojen perusteella:</p>
           <div className="results-content mt-4 prose dark:prose-invert">
             {messages.filter(m => m.role !== 'user').map((m: { id: string; content: string }) => (
-              <div key={m.id} className="whitespace-pre-wrap">
+              <div key={m.id} className="whitespace-pre-wrap dark:text-white">
                 {m.content}
               </div>
             ))}
